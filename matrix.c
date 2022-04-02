@@ -148,7 +148,7 @@ int free_matrix(int** matrix, int row, int col)
         free(matrix[i]);
     }
     free(matrix); //처음 동적할당한 1칸짜리 행들의 동적메모리 해제
-	return 0; // 함수 종료
+	return 1; // 함수 정상 종료
 }
 /* assign random values to the given matrix */
 int fill_data(int** matrix, int row, int col)
@@ -168,7 +168,7 @@ int fill_data(int** matrix, int row, int col)
 		printf("Memory Allocation Failed.\n");
 		return -1;
     }
-    return 0; //함수 종료
+    return 1; //함수 정상 종료
 }
 /* matrix_sum = matrix_a + matrix_b */
 int addition_matrix(int** matrix_a, int** matrix_b, int row, int col)
@@ -192,7 +192,7 @@ int addition_matrix(int** matrix_a, int** matrix_b, int row, int col)
     }
     print_matrix(SUMmtx, row, col); //a+b 행렬 출력
 	free_matrix(SUMmtx, row, col);  //a+b 행렬 동적 메모리 해제
-    return 0; // 함수 종료
+    return 1; // 함수 정상 종료
 }
 /* matrix_sub = matrix_a - matrix_b */
 int subtraction_matrix(int** matrix_a, int** matrix_b, int row, int col)
@@ -216,7 +216,7 @@ int subtraction_matrix(int** matrix_a, int** matrix_b, int row, int col)
     }
     print_matrix(DIFmtx, row, col); //a-b 행렬 출력
 	free_matrix(DIFmtx, row, col);  //a-b 행렬 동적 메모리 해제
-    return 0; //함수 종료
+    return 1; //함수 정상 종료
 }
 /* transpose the matrix to matrix_t */
 int transpose_matrix(int** matrix, int** matrix_t, int row, int col)
@@ -236,7 +236,7 @@ int transpose_matrix(int** matrix, int** matrix_t, int row, int col)
 		printf("Memory Allocation Failed.\n");
 		return -1; //오류발생
     }
-    return 0; //함수종료
+    return 1; //함수 정상 종료
 }
 /* matrix_axt - matrix_a x matrix_t */
 int multiply_matrix(int** matrix_a, int** matrix_t, int row, int col)
@@ -267,5 +267,5 @@ int multiply_matrix(int** matrix_a, int** matrix_t, int row, int col)
     }
     print_matrix(MULmtx, row, row); //a x t행렬 출력
 	free_matrix(MULmtx, row, col);  //a x t행렬 동적 메모리 해제
-    return 0; //함수종료
+    return 1; //함수 정상 종료
  }
